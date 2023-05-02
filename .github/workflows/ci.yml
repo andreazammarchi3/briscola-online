@@ -1,25 +1,27 @@
-name: Tests
+name: CI
 
 on:
-  pull_request:
   push:
+    branches:
+      - main
 
 jobs:
-  build-gradle-project:
+  build:
     runs-on: ubuntu-latest
-    steps:
-    - name: Checkout project sources
-      uses: actions/checkout@v2
-    - name: cd
-      run: cd briscola-online
-    - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
-    - name: Run build with Gradle Wrapper
-      run: >
-        cd briscola-online \
-        ./gradlew build
-    - name: Tests
-      run: >
-        cd briscola-online \
-        ./gradlew test
 
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gradle
+
+    - name: Build
+      working-directory: ./briscola-online
+      run: gradle classes testClasses
+
+    - name: Test
+      working-directory: ./briscola-online
+      run: gradle test
