@@ -20,3 +20,4 @@ jobs:
     - name: Test
       working-directory: ./briscola-online
       run: ./gradlew test
+      
