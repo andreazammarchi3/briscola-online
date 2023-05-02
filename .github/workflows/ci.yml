@@ -5,12 +5,13 @@ on:
   push:
 
 jobs:
-  test:
-    name: Test
-    runs-on: gradle-latest
+  build-gradle-project:
+    runs-on: ubuntu-latest
     steps:
-      - name: test
-        run: cd briscola-online
-          gradle classes testClasses
-          gradle test
+    - name: Checkout project sources
+      uses: actions/checkout@v2
+    - name: Setup Gradle
+      uses: briscola-online/gradle/gradle-build-action@v2
+    - name: Run build with Gradle Wrapper
+      run: briscola-online/gradlew build
 
