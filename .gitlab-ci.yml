@@ -1,0 +1,18 @@
+image: gradle:latest
+
+build:
+  stage: build
+  script: 
+    - cd briscola-online
+    - gradle classes testClasses
+
+
+test:
+  stage: test
+  script: 
+    - cd briscola-online
+    - gradle test
+  artifacts:
+    when: always
+    reports:
+      junit: '**/build/test-results/test/**/TEST-*.xml'

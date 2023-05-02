@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Label text="Lobby" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+   </top>
+   <padding>
+      <Insets bottom="30.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <bottom>
+      <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" text="Abbandona" />
+            <Button fx:id="startButton" disable="true" mnemonicParsing="false" onAction="#startMatch" text="Inizia partita" />
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Lobby Id:" />
+            <TextField fx:id="idTextField" alignment="CENTER" editable="false" prefHeight="26.0" prefWidth="90.0" promptText="Id">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
+            <Label text="User A:" />
+            <TextField fx:id="userATextField" alignment="CENTER" editable="false" prefHeight="26.0" prefWidth="90.0" promptText="UserA" />
+            <Label text="User B:" />
+            <TextField fx:id="userBTextField" alignment="CENTER" editable="false" prefHeight="26.0" prefWidth="90.0" promptText="UserB" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Status: " />
+                  <Label fx:id="statusLabel" text="..." />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>
