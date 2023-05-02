@@ -7,7 +7,7 @@ on:
 jobs:
   test:
     name: Test
-    container: gradle-latest
+    runs-on: gradle-latest
     steps:
       - name: test
         run: briscola-online/gradle classes testClasses
