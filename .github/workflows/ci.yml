@@ -10,6 +10,7 @@ jobs:
     runs-on: gradle-latest
     steps:
       - name: test
-        run: briscola-online/gradle classes testClasses
+        run: cd briscola-online
+          gradle classes testClasses
           gradle test
 
