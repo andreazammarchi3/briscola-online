@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,10 +16,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y gradle
 
-    - name: Build
-      working-directory: ./briscola-online
-      run: gradle classes testClasses
 
     - name: Test
       working-directory: ./briscola-online
-      run: gradle test
+      run: ./gradlew test
