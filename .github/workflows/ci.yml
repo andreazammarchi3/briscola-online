@@ -15,9 +15,11 @@ jobs:
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
     - name: Run build with Gradle Wrapper
-      run: cd briscola-online
+      run: >
+        cd briscola-online 
         ./gradlew build
     - name: Tests
-      run: cd briscola-online
+      run: >
+        cd briscola-online 
         ./gradlew test
 
