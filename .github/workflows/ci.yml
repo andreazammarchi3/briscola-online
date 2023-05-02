@@ -1,0 +1,15 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  test:
+    name: Test
+    container: gradle-latest
+    steps:
+      - name: test
+        run: briscola-online/gradle classes testClasses
+          gradle test
+
