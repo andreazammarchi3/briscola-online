@@ -89,6 +89,6 @@ public class MathUtils {
      * @return the card randomly played
      */
     public static Cards randomPlay(User user) {
-        return user.getHandCards().get(new Random().nextInt(0, user.getHandCards().size() - 1));
+        return user.getHandCards().get(new Random().nextInt(user.getHandCards().size() - 1));
     }
 }
